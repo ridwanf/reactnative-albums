@@ -6,7 +6,11 @@ class LoginForm extends Component {
     email: '',
     password: ''
   };
-
+  // This binding is necessary to make `this` work in the callback
+  onButtonPress = this.onButtonPress.bind(this);
+  onButtonPress() {
+    console.log('lalala');
+  }
   render() {
     return (
       <Card>
@@ -28,7 +32,7 @@ class LoginForm extends Component {
           />
       </CardSection>
       <CardSection>
-        <Button>
+        <Button onPress={this.onButtonPress}>
           Log in
         </Button>
       </CardSection>
